@@ -1,0 +1,24 @@
+@media (min-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    .container{
+        width: 100%;   
+    }
+}
+@media (min-width:801px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .container{
+        width: 100%;   
+    }
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
+    .container{
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ 
+    .container{
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

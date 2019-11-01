@@ -1,0 +1,118 @@
+*{
+    color:black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,body{
+    background-color: $bodyPrimaryBackground;
+}
+
+.noselect{
+    @include user-select(none);
+}
+
+.text-{
+    &center{
+        text-align: center;
+    }
+    &left{
+        text-align: left;
+    }
+    &right{
+        text-align: right;
+    }
+}
+
+h1{
+    font-size: 2em;
+}
+h2{
+    font-size: 1.5em;
+}
+h3{
+    font-size: 1.2em;
+}
+h4{
+    font-size: 1em;
+}
+h5{
+    font-size: 0.83em;
+}
+h6{
+    font-size: 0.67em;
+}
+
+header nav{
+    ul,
+    ol{
+        list-style-type: none;
+    }
+}
+
+.container{
+    width: 100%;   
+}
+
+footer{
+    position: absolute;
+    left:0;
+    right:0;
+    background-color: $footerPrimaryBackground;
+}
+
+@each $key, $value in $themeColors {
+    $oppositeColor: map-get($oppositeColors, $key);
+
+    .#{$key} {
+        color: $value;
+    }
+
+    .bg-#{$key} {
+        background-color: $value;
+    }
+
+    .fg-#{$key} {
+        color: $value;
+    }
+
+    a,
+    button,
+    input[type=submit]{
+        &.#{$key} {
+            @include border-radius(5px);
+            @extend .noselect;
+            text-decoration: none;
+            background-color: $value;
+            color: $oppositeColor;
+            border: 1px solid black;
+            padding: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+@for $i from 1 through 10 {
+    $scaleUp: 1 + ($i / 10);
+    $scaleDown: 1 - ($i / 10);
+    a,
+    button,
+    input[type=submit],
+    span{
+        &.scale-up-#{$i}{
+            @include transform(scale($scaleUp));
+            display:inline-block;
+        }
+        &.scale-down-#{$i}{
+            @include transform(scale($scaleDown));
+            display:inline-block;
+        }
+        &.scale-up-#{$i}-hover:hover{
+            @include transform(scale($scaleUp));
+            display:inline-block;
+        }
+        &.scale-down-#{$i}-hover:hover{
+            @include transform(scale($scaleDown));
+            display:inline-block;
+        }
+    }
+}

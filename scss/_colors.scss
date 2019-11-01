@@ -1,0 +1,24 @@
+$themeColors: (
+    primary: #2A9D8F,
+    secondary: #264653,
+    danger: #E76F51,
+    success: #9BC53D,
+    warning: #FDE74C,
+    info: #5BC0EB
+);
+
+$oppositeColors: (
+    primary: white,
+    secondary: white,
+    danger: black,
+    success: black,
+    warning: black,
+    info: black
+);
+
+// Text
+$textPrimaryColor:                  black;
+
+// Backgrounds
+$bodyPrimaryBackground:             #f2f2f2;
+$footerPrimaryBackground:           rgb(0,0,0,0.14);
