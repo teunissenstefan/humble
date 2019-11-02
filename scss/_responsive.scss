@@ -2,10 +2,36 @@
     .container{
         width: 100%;   
     }
+    .row{
+        .col{
+            display: block;
+            flex: 1 1 100%;
+        }
+        @for $i from 1 through 10 {
+            .col-#{$i}{
+                display: block;
+                flex: 1 1 100%;
+            }
+        }
+    }
 }
 @media (min-width:801px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
     .container{
         width: 100%;   
+    }
+    .row{
+        display: flex;
+        .col{
+            display: block;
+            flex: 1 1 0px;
+        }
+        @for $i from 1 through 10 {
+            .col-#{$i}{
+                $widthPercentage: percentage($i/10);
+                display: block;
+                flex: 1 1 $widthPercentage;
+            }
+        }
     }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
@@ -18,7 +44,5 @@
 @media (min-width:1281px) { /* hi-res laptops and desktops */ 
     .container{
         width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
     }
 }

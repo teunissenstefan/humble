@@ -1,3 +1,6 @@
+$standardRadius: 5px;
+$standardBorder: 1px solid black;
+
 *{
     color:black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,6 +14,10 @@ html,body{
     @include user-select(none);
 }
 
+.radius-standard{
+    @include border-radius($standardRadius);
+}
+
 .text-{
     &center{
         text-align: center;
@@ -21,6 +28,10 @@ html,body{
     &right{
         text-align: right;
     }
+}
+
+.text-small{
+    font-size: x-small;
 }
 
 h1{
@@ -60,6 +71,36 @@ footer{
     background-color: $footerPrimaryBackground;
 }
 
+.row{
+    width: 100%;
+    display: block;
+}
+
+.card{
+    @extend .radius-standard;
+    margin: 5px;
+    background-color: $cardPrimaryBackground;
+    width: 100%;
+    border: $standardBorder;
+    border-color: rgb(0,0,0,0.6);
+
+    .card-header{
+        @include border-top-left-radius($standardRadius);
+        @include border-top-right-radius($standardRadius);
+        border: $standardBorder;
+        border-color: rgb(0,0,0,0.6);
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        background-color: $cardHeaderBackground;
+        padding: 5px;
+    }
+
+    .card-body{
+        padding: 5px;
+    }
+}
+
 @each $key, $value in $themeColors {
     $oppositeColor: map-get($oppositeColors, $key);
 
@@ -79,13 +120,14 @@ footer{
     button,
     input[type=submit]{
         &.#{$key} {
-            @include border-radius(5px);
+            @extend .radius-standard;
             @extend .noselect;
             text-decoration: none;
             background-color: $value;
             color: $oppositeColor;
             border: 1px solid black;
             padding: 5px;
+            white-space: nowrap;
             cursor: pointer;
         }
     }
@@ -113,6 +155,25 @@ footer{
         &.scale-down-#{$i}-hover:hover{
             @include transform(scale($scaleDown));
             display:inline-block;
+        }
+    }
+    
+    p{
+        &.scale-up-#{$i}{
+            @include transform(scale($scaleUp));
+            display:block;
+        }
+        &.scale-down-#{$i}{
+            @include transform(scale($scaleDown));
+            display:block;
+        }
+        &.scale-up-#{$i}-hover:hover{
+            @include transform(scale($scaleUp));
+            display:block;
+        }
+        &.scale-down-#{$i}-hover:hover{
+            @include transform(scale($scaleDown));
+            display:block;
         }
     }
 }
