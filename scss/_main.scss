@@ -91,14 +91,15 @@ footer{
     display: block;
 }
 
-.card{
+.card,
+.accordion{
     @extend .radius-standard;
     margin: 5px;
     background-color: $cardPrimaryBackground;
     border: $standardBorder;
     border-color: rgb(0,0,0,0.6);
 
-    .card-header{
+    .header{
         @include border-top-left-radius($standardRadius);
         @include border-top-right-radius($standardRadius);
         border: $standardBorder;
@@ -111,8 +112,56 @@ footer{
         padding: 5px;
     }
 
-    .card-body{
+    .body{
         padding: 5px;
+    }
+}
+
+.accordion {
+    .header{
+        @include border-radius(0);
+        @extend .noselect;
+        cursor: pointer;
+        border-bottom: 1px solid rgb(0,0,0,0.6);
+        border-top: 1px solid rgb(0,0,0,0.6);
+    }
+
+    .accordion-tab:first-child .header{
+        border-top: none;
+    }
+
+    .closed {
+        .header{
+            border-bottom: none;
+        }
+
+        .body{
+            height:0px;
+            transition:height 1s ease-out;
+            -webkit-transform: scaleY(0);
+            -o-transform: scaleY(0);
+            -ms-transform: scaleY(0);
+            transform: scaleY(0);
+            display:none;
+        }
+    }
+    .open .body{
+        width: 100%;
+        display:block;
+        -webkit-transform: scaleY(1);
+        -o-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: top;
+        -o-transform-origin: top;
+        -ms-transform-origin: top;
+        transform-origin: top;
+    
+        -webkit-transition: -webkit-transform 0.4s ease-out;
+        -o-transition: -o-transform 0.4s ease;
+        -ms-transition: -ms-transform 0.4s ease;
+        transition: transform 0.4s ease;
+        box-sizing: border-box;
     }
 }
 

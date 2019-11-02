@@ -19,7 +19,7 @@ input[type=submit].danger, a.secondary,
 button.secondary,
 input[type=submit].secondary, a.primary,
 button.primary,
-input[type=submit].primary {
+input[type=submit].primary, .accordion .header {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -40,7 +40,8 @@ input[type=submit].danger, a.secondary,
 button.secondary,
 input[type=submit].secondary, a.primary,
 button.primary,
-input[type=submit].primary, .card {
+input[type=submit].primary, .card,
+.accordion {
   -moz-border-radius: 5px;
   -webkit-radius: 5px;
   border-radius: 5px;
@@ -118,13 +119,15 @@ footer {
   display: block;
 }
 
-.card {
+.card,
+.accordion {
   margin: 5px;
   background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid black;
   border-color: rgba(0, 0, 0, 0.6);
 }
-.card .card-header {
+.card .header,
+.accordion .header {
   -moz-border-top-left-radius: 5px;
   -webkit-top-left-radius: 5px;
   border-top-left-radius: 5px;
@@ -140,8 +143,50 @@ footer {
   font-size: 18px;
   padding: 5px;
 }
-.card .card-body {
+.card .body,
+.accordion .body {
   padding: 5px;
+}
+
+.accordion .header {
+  -moz-border-radius: 0;
+  -webkit-radius: 0;
+  border-radius: 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+}
+.accordion .accordion-tab:first-child .header {
+  border-top: none;
+}
+.accordion .closed .header {
+  border-bottom: none;
+}
+.accordion .closed .body {
+  height: 0px;
+  transition: height 1s ease-out;
+  -webkit-transform: scaleY(0);
+  -o-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  transform: scaleY(0);
+  display: none;
+}
+.accordion .open .body {
+  width: 100%;
+  display: block;
+  -webkit-transform: scaleY(1);
+  -o-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transform-origin: top;
+  -o-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -o-transition: -o-transform 0.4s ease;
+  -ms-transition: -ms-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  box-sizing: border-box;
 }
 
 .primary {
