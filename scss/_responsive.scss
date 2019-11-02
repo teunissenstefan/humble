@@ -3,6 +3,7 @@
         width: 100%;   
     }
     .row{
+        justify-content: center;
         .col{
             display: block;
             flex: 1 1 100%;
@@ -10,7 +11,7 @@
         @for $i from 1 through 10 {
             .col-#{$i}{
                 display: block;
-                flex: 1 1 100%;
+                flex: 0 1 100%;
             }
         }
     }
@@ -29,7 +30,7 @@
             .col-#{$i}{
                 $widthPercentage: percentage($i/10);
                 display: block;
-                flex: 1 1 $widthPercentage;
+                flex: 0 1 $widthPercentage;
             }
         }
     }

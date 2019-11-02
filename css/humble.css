@@ -1069,49 +1069,52 @@ p.scale-down-10-hover:hover {
     width: 100%;
   }
 
+  .row {
+    justify-content: center;
+  }
   .row .col {
     display: block;
     flex: 1 1 100%;
   }
   .row .col-1 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
   .row .col-2 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
   .row .col-3 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
   .row .col-4 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
   .row .col-5 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
   .row .col-6 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
   .row .col-7 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
   .row .col-8 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
   .row .col-9 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
   .row .col-10 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
 }
 @media (min-width: 801px) {
@@ -1129,43 +1132,43 @@ p.scale-down-10-hover:hover {
   }
   .row .col-1 {
     display: block;
-    flex: 1 1 10%;
+    flex: 0 1 10%;
   }
   .row .col-2 {
     display: block;
-    flex: 1 1 20%;
+    flex: 0 1 20%;
   }
   .row .col-3 {
     display: block;
-    flex: 1 1 30%;
+    flex: 0 1 30%;
   }
   .row .col-4 {
     display: block;
-    flex: 1 1 40%;
+    flex: 0 1 40%;
   }
   .row .col-5 {
     display: block;
-    flex: 1 1 50%;
+    flex: 0 1 50%;
   }
   .row .col-6 {
     display: block;
-    flex: 1 1 60%;
+    flex: 0 1 60%;
   }
   .row .col-7 {
     display: block;
-    flex: 1 1 70%;
+    flex: 0 1 70%;
   }
   .row .col-8 {
     display: block;
-    flex: 1 1 80%;
+    flex: 0 1 80%;
   }
   .row .col-9 {
     display: block;
-    flex: 1 1 90%;
+    flex: 0 1 90%;
   }
   .row .col-10 {
     display: block;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
   }
 }
 @media (min-width: 1025px) {
