@@ -1,19 +1,19 @@
 $themeColors: (
-    primary: #2A9D8F,
-    secondary: #264653,
-    danger: #E76F51,
-    success: #9BC53D,
-    warning: #FDE74C,
-    info: #5BC0EB
+    primary: #0078e7,
+    secondary: rgb(66, 184, 221),
+    danger: rgb(202, 60, 60),
+    success: rgb(28, 184, 65),
+    warning: rgb(223, 117, 20),
+    info: #bfbfbf
 );
 
 $oppositeColors: (
     primary: white,
     secondary: white,
-    danger: black,
-    success: black,
-    warning: black,
-    info: black
+    danger: white,
+    success: white,
+    warning: white,
+    info: white
 );
 
 // Text

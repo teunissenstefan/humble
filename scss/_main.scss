@@ -28,6 +28,21 @@ html,body{
     &right{
         text-align: right;
     }
+    &white{
+        color: white;
+    }
+    &black{
+        color: black;
+    }
+}
+
+.float-{
+    &left{
+        float:left;
+    }
+    &right{
+        float:right;
+    }
 }
 
 .text-small{
@@ -80,7 +95,6 @@ footer{
     @extend .radius-standard;
     margin: 5px;
     background-color: $cardPrimaryBackground;
-    width: 100%;
     border: $standardBorder;
     border-color: rgb(0,0,0,0.6);
 
@@ -93,6 +107,7 @@ footer{
         border-right: none;
         border-top: none;
         background-color: $cardHeaderBackground;
+        font-size: 18px;
         padding: 5px;
     }
 
@@ -123,12 +138,17 @@ footer{
             @extend .radius-standard;
             @extend .noselect;
             text-decoration: none;
+            display: inline-block;
+            line-height: normal;
+            box-sizing: border-box;
             background-color: $value;
             color: $oppositeColor;
-            border: 1px solid black;
-            padding: 5px;
+            border: none transparent;
+            padding: .5em 1em !important;
+            font-size: 100%;
             white-space: nowrap;
             cursor: pointer;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
         }
     }
 }

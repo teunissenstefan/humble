@@ -55,6 +55,19 @@ input[type=submit].primary, .card {
 .text-right {
   text-align: right;
 }
+.text-white {
+  color: white;
+}
+.text-black {
+  color: black;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
 
 .text-small {
   font-size: x-small;
@@ -108,7 +121,6 @@ footer {
 .card {
   margin: 5px;
   background-color: rgba(0, 0, 0, 0.1);
-  width: 100%;
   border: 1px solid black;
   border-color: rgba(0, 0, 0, 0.6);
 }
@@ -125,6 +137,7 @@ footer {
   border-right: none;
   border-top: none;
   background-color: rgba(0, 0, 0, 0.24);
+  font-size: 18px;
   padding: 5px;
 }
 .card .card-body {
@@ -132,147 +145,177 @@ footer {
 }
 
 .primary {
-  color: #2A9D8F;
+  color: #0078e7;
 }
 
 .bg-primary {
-  background-color: #2A9D8F;
+  background-color: #0078e7;
 }
 
 .fg-primary {
-  color: #2A9D8F;
+  color: #0078e7;
 }
 
 a.primary,
 button.primary,
 input[type=submit].primary {
   text-decoration: none;
-  background-color: #2A9D8F;
+  display: inline-block;
+  line-height: normal;
+  box-sizing: border-box;
+  background-color: #0078e7;
   color: white;
-  border: 1px solid black;
-  padding: 5px;
+  border: none transparent;
+  padding: 0.5em 1em !important;
+  font-size: 100%;
   white-space: nowrap;
   cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .secondary {
-  color: #264653;
+  color: #42b8dd;
 }
 
 .bg-secondary {
-  background-color: #264653;
+  background-color: #42b8dd;
 }
 
 .fg-secondary {
-  color: #264653;
+  color: #42b8dd;
 }
 
 a.secondary,
 button.secondary,
 input[type=submit].secondary {
   text-decoration: none;
-  background-color: #264653;
+  display: inline-block;
+  line-height: normal;
+  box-sizing: border-box;
+  background-color: #42b8dd;
   color: white;
-  border: 1px solid black;
-  padding: 5px;
+  border: none transparent;
+  padding: 0.5em 1em !important;
+  font-size: 100%;
   white-space: nowrap;
   cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .danger {
-  color: #E76F51;
+  color: #ca3c3c;
 }
 
 .bg-danger {
-  background-color: #E76F51;
+  background-color: #ca3c3c;
 }
 
 .fg-danger {
-  color: #E76F51;
+  color: #ca3c3c;
 }
 
 a.danger,
 button.danger,
 input[type=submit].danger {
   text-decoration: none;
-  background-color: #E76F51;
-  color: black;
-  border: 1px solid black;
-  padding: 5px;
+  display: inline-block;
+  line-height: normal;
+  box-sizing: border-box;
+  background-color: #ca3c3c;
+  color: white;
+  border: none transparent;
+  padding: 0.5em 1em !important;
+  font-size: 100%;
   white-space: nowrap;
   cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .success {
-  color: #9BC53D;
+  color: #1cb841;
 }
 
 .bg-success {
-  background-color: #9BC53D;
+  background-color: #1cb841;
 }
 
 .fg-success {
-  color: #9BC53D;
+  color: #1cb841;
 }
 
 a.success,
 button.success,
 input[type=submit].success {
   text-decoration: none;
-  background-color: #9BC53D;
-  color: black;
-  border: 1px solid black;
-  padding: 5px;
+  display: inline-block;
+  line-height: normal;
+  box-sizing: border-box;
+  background-color: #1cb841;
+  color: white;
+  border: none transparent;
+  padding: 0.5em 1em !important;
+  font-size: 100%;
   white-space: nowrap;
   cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .warning {
-  color: #FDE74C;
+  color: #df7514;
 }
 
 .bg-warning {
-  background-color: #FDE74C;
+  background-color: #df7514;
 }
 
 .fg-warning {
-  color: #FDE74C;
+  color: #df7514;
 }
 
 a.warning,
 button.warning,
 input[type=submit].warning {
   text-decoration: none;
-  background-color: #FDE74C;
-  color: black;
-  border: 1px solid black;
-  padding: 5px;
+  display: inline-block;
+  line-height: normal;
+  box-sizing: border-box;
+  background-color: #df7514;
+  color: white;
+  border: none transparent;
+  padding: 0.5em 1em !important;
+  font-size: 100%;
   white-space: nowrap;
   cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .info {
-  color: #5BC0EB;
+  color: #bfbfbf;
 }
 
 .bg-info {
-  background-color: #5BC0EB;
+  background-color: #bfbfbf;
 }
 
 .fg-info {
-  color: #5BC0EB;
+  color: #bfbfbf;
 }
 
 a.info,
 button.info,
 input[type=submit].info {
   text-decoration: none;
-  background-color: #5BC0EB;
-  color: black;
-  border: 1px solid black;
-  padding: 5px;
+  display: inline-block;
+  line-height: normal;
+  box-sizing: border-box;
+  background-color: #bfbfbf;
+  color: white;
+  border: none transparent;
+  padding: 0.5em 1em !important;
+  font-size: 100%;
   white-space: nowrap;
   cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 a.scale-up-1,
