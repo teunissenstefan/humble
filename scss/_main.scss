@@ -118,6 +118,7 @@ footer{
 }
 
 .accordion {
+    @include transition(all 0.4s ease);
     .header{
         @include border-radius(0);
         @extend .noselect;
@@ -136,32 +137,11 @@ footer{
         }
 
         .body{
-            height:0px;
-            transition:height 1s ease-out;
-            -webkit-transform: scaleY(0);
-            -o-transform: scaleY(0);
-            -ms-transform: scaleY(0);
-            transform: scaleY(0);
             display:none;
         }
     }
     .open .body{
-        width: 100%;
         display:block;
-        -webkit-transform: scaleY(1);
-        -o-transform: scaleY(1);
-        -ms-transform: scaleY(1);
-        transform: scaleY(1);
-        -webkit-transform-origin: top;
-        -o-transform-origin: top;
-        -ms-transform-origin: top;
-        transform-origin: top;
-    
-        -webkit-transition: -webkit-transform 0.4s ease-out;
-        -o-transition: -o-transform 0.4s ease;
-        -ms-transition: -ms-transform 0.4s ease;
-        transition: transform 0.4s ease;
-        box-sizing: border-box;
     }
 }
 
