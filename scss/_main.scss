@@ -1,5 +1,6 @@
 $standardRadius: 5px;
-$standardBorder: 1px solid black;
+$standardBorderColor: rgba(0, 0, 0, 0.6);
+$standardBorder: 1px solid $standardBorderColor;
 
 *{
     color:black;
@@ -16,6 +17,14 @@ html,body{
 
 .radius-standard{
     @include border-radius($standardRadius);
+}
+
+.d-block{
+    display: block;
+}
+
+.d-inline-block{
+    display: inline-block;
 }
 
 .text-{
@@ -97,13 +106,13 @@ footer{
     margin: 5px;
     background-color: $cardPrimaryBackground;
     border: $standardBorder;
-    border-color: rgb(0,0,0,0.6);
+    border-color: $standardBorderColor;
 
     .header{
         @include border-top-left-radius($standardRadius);
         @include border-top-right-radius($standardRadius);
         border: $standardBorder;
-        border-color: rgb(0,0,0,0.6);
+        border-color: $standardBorderColor;
         border-left: none;
         border-right: none;
         border-top: none;
@@ -123,8 +132,8 @@ footer{
         @include border-radius(0);
         @extend .noselect;
         cursor: pointer;
-        border-bottom: 1px solid rgb(0,0,0,0.6);
-        border-top: 1px solid rgb(0,0,0,0.6);
+        border-bottom: 1px solid $standardBorderColor;
+        border-top: 1px solid $standardBorderColor;
     }
 
     .accordion-tab:first-child .header{
@@ -145,6 +154,28 @@ footer{
     }
 }
 
+$textInputList: (
+    "input[type=date]",
+    "input[type=datetime-local]",
+    "input[type=email]",
+    "input[type=month]",
+    "input[type=number]",
+    "input[type=search]",
+    "input[type=tel]",
+    "input[type=text]",
+    "input[type=time]",
+    "input[type=url]",
+    "input[type=week]",
+    "input[type=password]"
+);
+
+@each $selector in $textInputList {
+    #{$selector}{
+        @extend .radius-standard;
+        border: $standardBorder;
+    }
+}
+
 @each $key, $value in $themeColors {
     $oppositeColor: map-get($oppositeColors, $key);
 
@@ -162,7 +193,9 @@ footer{
 
     a,
     button,
-    input[type=submit]{
+    input[type=submit],
+    input[type=button],
+    input[type=reset]{ // Buttons
         &.#{$key} {
             @extend .radius-standard;
             @extend .noselect;
@@ -173,56 +206,46 @@ footer{
             background-color: $value;
             color: $oppositeColor;
             border: none transparent;
-            padding: .5em 1em !important;
+            padding: .5em 1em;
             font-size: 100%;
             white-space: nowrap;
             cursor: pointer;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
         }
     }
-}
 
-@for $i from 1 through 10 {
-    $scaleUp: 1 + ($i / 10);
-    $scaleDown: 1 - ($i / 10);
-    a,
-    button,
-    input[type=submit],
-    span{
-        &.scale-up-#{$i}{
-            @include transform(scale($scaleUp));
-            display:inline-block;
-        }
-        &.scale-down-#{$i}{
-            @include transform(scale($scaleDown));
-            display:inline-block;
-        }
-        &.scale-up-#{$i}-hover:hover{
-            @include transform(scale($scaleUp));
-            display:inline-block;
-        }
-        &.scale-down-#{$i}-hover:hover{
-            @include transform(scale($scaleDown));
-            display:inline-block;
+    @each $selector in $textInputList { // Inputs
+        #{$selector}.#{$key}{
+            @extend .radius-standard;
+            background-color: $value;
+            color: $oppositeColor;
+
+            &::-webkit-input-placeholder{
+                color: darken($oppositeColor, $amount: 5);
+            }
+            &::-ms-input-placeholder{
+                color: darken($oppositeColor, $amount: 5);
+            }
+            &::placeholder{
+                color: darken($oppositeColor, $amount: 5);
+            }
         }
     }
-    
-    p{
-        &.scale-up-#{$i}{
-            @include transform(scale($scaleUp));
-            display:block;
-        }
-        &.scale-down-#{$i}{
-            @include transform(scale($scaleDown));
-            display:block;
-        }
-        &.scale-up-#{$i}-hover:hover{
-            @include transform(scale($scaleUp));
-            display:block;
-        }
-        &.scale-down-#{$i}-hover:hover{
-            @include transform(scale($scaleDown));
-            display:block;
-        }
+}
+
+@for $i from 1 through 10 { // Scaling classes
+    $scaleUp: 1 + ($i / 10);
+    $scaleDown: 1 - ($i / 10);    
+    .scale-up-#{$i}{
+        @include transform(scale($scaleUp));
+    }
+    .scale-down-#{$i}{
+        @include transform(scale($scaleDown));
+    }
+    .scale-up-#{$i}-hover:hover{
+        @include transform(scale($scaleUp));
+    }
+    .scale-down-#{$i}-hover:hover{
+        @include transform(scale($scaleDown));
     }
 }
