@@ -130,9 +130,58 @@ h6 {
   font-size: 0.67em;
 }
 
-header nav ul,
-header nav ol {
+header.navbar nav {
+  padding: 15px;
+}
+header.navbar nav .mobile-header {
+  display: flex;
+  justify-content: space-between;
+}
+header.navbar nav .brand {
+  display: inline;
+  font-size: 25px;
+}
+header.navbar nav ul,
+header.navbar nav ol {
+  display: none;
   list-style-type: none;
+  flex-direction: column;
+}
+header.navbar nav ul li,
+header.navbar nav ol li {
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+header.navbar nav ul.open,
+header.navbar nav ol.open {
+  display: block;
+}
+header.navbar nav .hamburger-button {
+  display: inline;
+  font-size: 25px;
+}
+header.navbar nav a:link, header.navbar nav a:visited, header.navbar nav a:hover, header.navbar nav a:active {
+  text-decoration: none;
+}
+header.navbar.top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+header.navbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header.navbar.sticky {
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 .container {
@@ -282,6 +331,20 @@ input[type=reset].primary {
   white-space: nowrap;
   cursor: pointer;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+header.navbar.primary {
+  background-color: #0078e7;
+  color: white;
+}
+header.navbar.primary a:link, header.navbar.primary a:visited {
+  color: white;
+}
+header.navbar.primary a:hover {
+  color: #e6e6e6;
+}
+header.navbar.primary a:active {
+  color: white;
 }
 
 input[type=date].primary {
@@ -483,6 +546,20 @@ input[type=reset].secondary {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+header.navbar.secondary {
+  background-color: #42b8dd;
+  color: white;
+}
+header.navbar.secondary a:link, header.navbar.secondary a:visited {
+  color: white;
+}
+header.navbar.secondary a:hover {
+  color: #e6e6e6;
+}
+header.navbar.secondary a:active {
+  color: white;
+}
+
 input[type=date].secondary {
   background-color: #42b8dd;
   color: white;
@@ -680,6 +757,20 @@ input[type=reset].danger {
   white-space: nowrap;
   cursor: pointer;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+header.navbar.danger {
+  background-color: #ca3c3c;
+  color: white;
+}
+header.navbar.danger a:link, header.navbar.danger a:visited {
+  color: white;
+}
+header.navbar.danger a:hover {
+  color: #e6e6e6;
+}
+header.navbar.danger a:active {
+  color: white;
 }
 
 input[type=date].danger {
@@ -881,6 +972,20 @@ input[type=reset].success {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+header.navbar.success {
+  background-color: #1cb841;
+  color: white;
+}
+header.navbar.success a:link, header.navbar.success a:visited {
+  color: white;
+}
+header.navbar.success a:hover {
+  color: #e6e6e6;
+}
+header.navbar.success a:active {
+  color: white;
+}
+
 input[type=date].success {
   background-color: #1cb841;
   color: white;
@@ -1080,6 +1185,20 @@ input[type=reset].warning {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+header.navbar.warning {
+  background-color: #df7514;
+  color: white;
+}
+header.navbar.warning a:link, header.navbar.warning a:visited {
+  color: white;
+}
+header.navbar.warning a:hover {
+  color: #e6e6e6;
+}
+header.navbar.warning a:active {
+  color: white;
+}
+
 input[type=date].warning {
   background-color: #df7514;
   color: white;
@@ -1277,6 +1396,20 @@ input[type=reset].info {
   white-space: nowrap;
   cursor: pointer;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+header.navbar.info {
+  background-color: #bfbfbf;
+  color: white;
+}
+header.navbar.info a:link, header.navbar.info a:visited {
+  color: white;
+}
+header.navbar.info a:hover {
+  color: #e6e6e6;
+}
+header.navbar.info a:active {
+  color: white;
 }
 
 input[type=date].info {
@@ -1833,6 +1966,32 @@ input[type=password].info::placeholder {
   .row .col-10 {
     display: block;
     flex: 0 1 100%;
+  }
+
+  header.navbar nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  header.navbar nav .mobile-header {
+    display: block;
+  }
+  header.navbar nav .navbar-links {
+    margin-top: 5px;
+  }
+  header.navbar nav ul,
+header.navbar nav ol {
+    padding: 0;
+    margin: 0;
+    display: block;
+    list-style-type: none;
+  }
+  header.navbar nav ul li,
+header.navbar nav ol li {
+    padding: 0 5px 0 5px;
+    display: inline;
+  }
+  header.navbar nav .hamburger-button {
+    display: none;
   }
 }
 @media (min-width: 1025px) {

@@ -23,6 +23,25 @@ var initAccordion = function(){
     }
 }
 
+var initMenu = function(){
+    var navbarElements = document.querySelectorAll(".navbar nav");
+    for(var i = 0; i < navbarElements.length; i++) // Loop through navbars
+    {
+        var navbarElement = navbarElements.item(i);
+        var hamburgerButton = navbarElement.querySelector(".hamburger-button");
+        var navbarMenu = navbarElement.querySelector(".navbar-links");
+        
+        hamburgerButton.addEventListener('click', function(){
+            if (navbarMenu.classList.contains('open')) {
+                navbarMenu.classList.remove('open');
+            }else{
+                navbarMenu.classList.add('open');
+            }
+        });
+    }
+}
+
 window.addEventListener('load', function(){
     initAccordion();
+    initMenu();
 });

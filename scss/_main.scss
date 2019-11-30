@@ -77,10 +77,73 @@ h6{
     font-size: 0.67em;
 }
 
-header nav{
-    ul,
-    ol{
-        list-style-type: none;
+header.navbar{
+
+    nav{
+        padding: 15px;
+
+        .mobile-header{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .brand{
+            display: inline;
+            font-size: 25px;
+        }
+
+        ul,
+        ol{
+            display: none;
+            list-style-type: none;
+            flex-direction: column;
+
+            li{
+                font-size: 18px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                text-align: center;
+            }
+
+            &.open{
+                display: block;
+            }
+        }
+
+        .hamburger-button{
+            display: inline;
+            font-size: 25px;
+        }
+
+        a{
+            &:link,
+            &:visited,
+            &:hover,
+            &:active{
+                text-decoration: none;
+            }
+        }
+    }
+    
+    &.top{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    &.fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &.sticky{
+        position: sticky;
+        left: 0;
+        right: 0;
+        top: 0;
     }
 }
 
@@ -196,7 +259,7 @@ $textInputList: (
     input[type=submit],
     input[type=button],
     input[type=reset]{ // Buttons
-        &.#{$key} {
+        &.#{$key}{
             @extend .radius-standard;
             @extend .noselect;
             text-decoration: none;
@@ -211,6 +274,28 @@ $textInputList: (
             white-space: nowrap;
             cursor: pointer;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    header.navbar{
+        &.#{$key}{
+            background-color: $value;
+            color: $oppositeColor;
+
+            a{
+                &:link,
+                &:visited{
+                    color: $oppositeColor;
+                }
+
+                &:hover{
+                    color: darken($oppositeColor, $amount: 10);
+                }
+
+                &:active{
+                    color: $oppositeColor;
+                }
+            }
         }
     }
 
